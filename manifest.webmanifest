@@ -1,0 +1,19 @@
+{
+  "name": "North Finance Career OS",
+  "short_name": "North Career",
+  "description": "金融职业路径、每日行动与成长证据系统。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7efe5",
+  "theme_color": "#17171b",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

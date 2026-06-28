@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta name="theme-color" content="#17171b"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="North Career"/>
+  <title>North Finance Career OS</title>
+  <link rel="manifest" href="manifest.webmanifest"/>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml"/>
+  <link rel="apple-touch-icon" href="assets/icon.svg"/>
+  <link rel="stylesheet" href="styles.css?v=12"/>
+</head>
+<body>
+  <section id="splash" class="splash hidden">
+    <div class="splash-marble"></div>
+    <div class="splash-content">
+      <div class="splash-mark">▲</div>
+      <p class="eyebrow">North · Career Direction System</p>
+      <h1>看见路径，也看见今天这一小步为什么值得。</h1>
+      <p>从学历、实习和技能出发，生成金融职业坐标、每日行动与可写入简历的成长证据。</p>
+      <button id="enterApp">开始探索</button>
+    </div>
+  </section>
+  <main class="app-shell">
+    <aside class="left-rail">
+      <div class="brand">
+        <span class="mark">▲</span>
+        <div><p class="eyebrow">North · Finance Career OS</p><h1>从你的坐标出发，看到金融职业的所有可能。</h1></div>
+      </div>
+      <nav id="nav"></nav>
+      <div class="profile-summary">
+        <span>当前原点</span>
+        <b id="profileSummary">未完成 onboarding</b>
+        <small>也可以直接上传简历识别</small>
+      </div>
+    </aside>
+
+    <section class="phone-stage">
+      <div class="phone">
+        <div class="island"></div>
+        <div class="status"><span>9:41</span><span>5G ▰</span></div>
+        <div id="screen"></div>
+        <div id="coachBubble" class="coach-bubble">
+          <button id="coachToggle" class="coach-toggle" onclick="toggleCoach()">AI</button>
+          <section id="coachPanel" class="coach-panel">
+            <header><b>North AI</b><button onclick="toggleCoach()">×</button></header>
+            <div id="coachMessages" class="coach-messages">
+              <p>我会根据当前页面和你的画像回答。可以问我：为什么推荐这条路？下一步做什么？</p>
+            </div>
+            <form onsubmit="sendCoachMessage(event)">
+              <input id="coachInput" placeholder="补充信息或提问..."/>
+              <button>发送</button>
+            </form>
+          </section>
+        </div>
+        <div class="bottom-nav">
+          <button data-index="0">◎</button>
+          <button data-index="1">◇</button>
+          <button data-index="2">♙</button>
+          <button data-index="3">▤</button>
+          <button data-index="4">◉</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right-panel">
+      <p class="eyebrow">节点详情</p>
+      <h2 id="nodeTitle">银行总行</h2>
+      <p id="nodeReason" class="muted">根据你的学历、实习和稳定性偏好推荐。</p>
+
+      <div class="metrics">
+        <div><span>适配度</span><b id="fitScore">88%</b></div>
+        <div><span>薪资</span><b id="salary">20–30w</b></div>
+      </div>
+
+      <div class="detail-row"><span>职业发展</span><b id="development"></b></div>
+      <div class="detail-row"><span>加班强度</span><b id="intensity"></b></div>
+      <div class="detail-row"><span>稳定性</span><b id="stability"></b></div>
+      <div class="detail-row"><span>就业行情</span><b id="market"></b></div>
+
+      <h3>需要的能力</h3>
+      <div id="skillsList" class="mini-list"></div>
+      <h3>优势</h3>
+      <div id="prosList" class="mini-list"></div>
+      <h3>缺点 / 风险</h3>
+      <div id="consList" class="mini-list"></div>
+      <button class="ai-action" onclick="explainSelectedCareer()">AI 生成路径解释</button>
+      <div id="aiCareerNote" class="ai-note">当前为本地模拟模型；接入后端后会调用 OpenAI API。</div>
+    </aside>
+  </main>
+  <script src="aiClient.js?v=12"></script>
+  <script src="app.js?v=12"></script>
+</body>
+</html>

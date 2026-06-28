@@ -1,0 +1,22 @@
+{
+  "name": "north-finance-career-os",
+  "version": "0.1.0",
+  "private": true,
+  "description": "North Finance Career OS mobile app prototype.",
+  "scripts": {
+    "serve": "python3 -m http.server 5174",
+    "build": "rm -rf www && mkdir -p www/assets && cp index.html styles.css aiClient.js app.js manifest.webmanifest sw.js www/ && cp assets/icon.svg www/assets/",
+    "cap:init": "npx cap init \"North Finance Career OS\" com.northcareer.app --web-dir www",
+    "cap:add:ios": "npx cap add ios",
+    "cap:add:android": "npx cap add android",
+    "cap:sync": "npx cap sync",
+    "cap:open:ios": "npx cap open ios",
+    "cap:open:android": "npx cap open android"
+  },
+  "devDependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/cli": "latest",
+    "@capacitor/core": "latest",
+    "@capacitor/ios": "latest"
+  }
+}

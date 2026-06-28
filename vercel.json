@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "www",
+  "functions": {
+    "api/ai.js": {
+      "maxDuration": 30
+    }
+  }
+}
